@@ -58,6 +58,23 @@ import quotes from './henry_iv.json';
 
       Promise.all(requests).then(() => {
         console.log(parts);
+
+        const data = [
+          {name: "sadness", data: {}},
+          {name: "anger", data: {}},
+        ]
+
+        for (const line of parts[0]) {
+          data[0].data[line.line_number] = line.emotion.sadness * 100
+          data[1].data[line.line_number] = line.emotion.anger * 100
+        }
+
+        console.log(data)
+
+        // data = [
+        //   {"name":"Sadness", "data": {"{quotes.act, quotes.line}": emotion * 100 + "%", "{quotes.act, quotes.line}": emotion * 100 + "%", ...}},
+        //   {"name":"Angery", "data": {"{quotes.act, quotes.line}": emotion * 100 + "%", "{quotes.act, quotes.line}": emotion * 100 + "%", ...}},
+        // ];
       })
 
 //  }
