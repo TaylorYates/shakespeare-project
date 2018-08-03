@@ -187,3 +187,5 @@ export default Quotes;
 // write readme
 // write tests
 // nice to have: a spinner while it loads
+
+// could I delete the . in the line numbers to get them to order correctly?
