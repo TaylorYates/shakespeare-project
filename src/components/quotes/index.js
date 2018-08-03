@@ -172,8 +172,10 @@ class Quotes extends React.Component {
 
   render() {
     return (
-      <div>
-        <LineChart data={this.state.dataAll} colors={["#2E64C8", "#009727", "#FF992B", "#9D0096", "#E23822"]} suffix="%" height="600px"/>
+      <div className="linechart-container">
+        <div className="x-title">Emotion percentage</div>
+        <div class="y-title">Act, scene</div>
+        <LineChart data={this.state.dataAll} colors={["#2E64C8", "#009727", "#FF992B", "#9D0096", "#E23822"]} suffix="%" width="80%" height="600px" />
       </div>
     )
   }

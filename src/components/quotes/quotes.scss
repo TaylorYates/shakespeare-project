@@ -1,0 +1,24 @@
+.linechart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.x-title,
+.y-title {
+  font-size: 0.75rem;
+  color: #8c8c8c;
+}
+
+.x-title {
+  position: absolute;
+  top: 0;
+  left: 10%;
+}
+
+.y-title {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+}
