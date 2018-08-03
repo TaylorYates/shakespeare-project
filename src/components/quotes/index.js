@@ -2,12 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './quotes.css';
 import quotes from './henry_iv.json';
+import ReactChartkick, { LineChart } from 'react-chartkick'
+import Chart from 'chart.js'
+
+ReactChartkick.addAdapter(Chart)
 
 class Quotes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // data: dataAll
+      dataAll: [],
+      dataOne: [],
+      dataTwo: [],
+      dataThree: [],
+      dataFour: [],
+      dataFive: []
     }
   }
 
@@ -144,14 +153,10 @@ class Quotes extends React.Component {
         dataFive[4].data[line.line_number] = parseFloat(Math.round(line.emotion.anger * 100));
       }
 
-      console.log(dataAll)
-      console.log(dataOne)
-      console.log(dataTwo)
-      console.log(dataThree)
-      console.log(dataFour)
-      console.log(dataFive)
+      this.setState({dataAll})
     })
   }
+
 
   componentWillUnmount() {
     //
@@ -160,7 +165,7 @@ class Quotes extends React.Component {
   render() {
     return (
       <div>
-        {this.state.data}
+        <LineChart data={this.state.dataAll} colors={["#2E64C8", "#009727", "#FF992B", "#9D0096", "#E23822"]} suffix="%" height="600px"/>
       </div>
     )
   }
@@ -176,8 +181,9 @@ export default Quotes;
 //   TODO    //
 ///////////////
 // create an array of objects for all, act 1, act 2, etc DONE
-// utilise this array of objects to impliment line graphs (a component that will change the nested object being fed into it corrosponding with a data attribute on the button. Ie. if all is clicked, it renders the first object, etc, rather than having 6 components that do the same thing) => https://www.chartkick.com/react
-// components: graph, button, page title
+// utilise this array of objects to impliment line graphs (a component that will change the nested object being fed into it corrosponding with a data attribute on the button. Ie. if all is clicked, it renders the first object, etc, rather than having 6 components that do the same thing) => https://www.chartkick.com/react DONE
+// Order quotes in array
+//components: graph, button, page title
 // write readme
 // write tests
 // nice to have: a spinner while it loads
