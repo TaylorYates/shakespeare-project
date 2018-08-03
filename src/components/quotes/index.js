@@ -43,12 +43,16 @@ class Quotes extends React.Component {
         // if it's corrolating json has an emotion property
         if (myJson.emotion) {
           const emotion = myJson.emotion.emotion.document.emotion;
+          //break up the line number
           let [act, verse, line] = lineNo.split(".");
 
+          // turn the first part ie. act into a number from a string
           act = parseInt(act);
 
+          // redefining emotion for this purpose
           quote.emotion = emotion;
 
+          // push these into arrays of their corrosponding act
           parts[0].push(quote);
           parts[act].push(quote);
         }
@@ -56,8 +60,10 @@ class Quotes extends React.Component {
     }
 
     Promise.all(requests).then(() => {
+      // create data specific arrays to suit the line chart's required format
 
       const dataAll = [
+        // this is for the format required by the line chart
         {name: "sadness", data: {}},
         {name: "joy", data: {}},
         {name: "fear", data: {}},
@@ -66,6 +72,7 @@ class Quotes extends React.Component {
       ]
 
       for (const line of parts[0]) {
+        //get the dataAll array position x, insert into data the line number assigned to the emotional score, rounded to the nearest number and multiplied by 100 to create a number out of 100
         dataAll[0].data[line.line_number] = parseFloat(Math.round(line.emotion.sadness * 100));
         dataAll[1].data[line.line_number] = parseFloat(Math.round(line.emotion.joy * 100));
         dataAll[2].data[line.line_number] = parseFloat(Math.round(line.emotion.fear * 100));
@@ -153,13 +160,14 @@ class Quotes extends React.Component {
         dataFive[4].data[line.line_number] = parseFloat(Math.round(line.emotion.anger * 100));
       }
 
+      // Set this as the state
       this.setState({dataAll})
     })
   }
 
 
   componentWillUnmount() {
-    //
+    // nothing to unmount
   }
 
   render() {
@@ -183,9 +191,7 @@ export default Quotes;
 // create an array of objects for all, act 1, act 2, etc DONE
 // utilise this array of objects to impliment line graphs (a component that will change the nested object being fed into it corrosponding with a data attribute on the button. Ie. if all is clicked, it renders the first object, etc, rather than having 6 components that do the same thing) => https://www.chartkick.com/react DONE
 // Order quotes in array
-//components: graph, button, page title
+//components: graph, buttons, page title
 // write readme
 // write tests
 // nice to have: a spinner while it loads
-
-// could I delete the . in the line numbers to get them to order correctly?
