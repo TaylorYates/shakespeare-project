@@ -4,6 +4,7 @@ import './quotes.css';
 import quotes from './henry_iv.json';
 import ReactChartkick, { LineChart } from 'react-chartkick'
 import Chart from 'chart.js'
+import Spinner from '../spinner'
 
 ReactChartkick.addAdapter(Chart)
 
@@ -16,7 +17,8 @@ class Quotes extends React.Component {
       dataTwo: [],
       dataThree: [],
       dataFour: [],
-      dataFive: []
+      dataFive: [],
+      loaded: false
     }
   }
 
@@ -161,7 +163,14 @@ class Quotes extends React.Component {
       }
 
       // Set this as the state
-      this.setState({dataAll})
+      this.setState({
+        dataAll,
+        dataOne,
+        dataTwo,
+        dataThree,
+        dataFour,
+        dataFive,
+        loaded: true})
     })
   }
 
@@ -173,9 +182,13 @@ class Quotes extends React.Component {
   render() {
     return (
       <div className="linechart-container">
-        <div className="x-title">Emotion percentage</div>
-        <div class="y-title">Act, scene</div>
-        <LineChart data={this.state.dataAll} colors={["#2E64C8", "#009727", "#FF992B", "#9D0096", "#E23822"]} suffix="%" width="80%" height="600px" />
+        {this.state.loaded ?
+          <React.Fragment>
+            <div className="x-title">Emotion percentage</div>
+            <div class="y-title">Act, scene, line</div>
+            <LineChart data={this.state[this.props.dataType]} colors={["#2E64C8", "#009727", "#FF992B", "#9D0096", "#E23822"]} suffix="%" width="80%" height="600px" legend="right" />
+          </React.Fragment>
+          : <Spinner/>}
       </div>
     )
   }
@@ -193,7 +206,7 @@ export default Quotes;
 // create an array of objects for all, act 1, act 2, etc DONE
 // utilise this array of objects to impliment line graphs (a component that will change the nested object being fed into it corrosponding with a data attribute on the button. Ie. if all is clicked, it renders the first object, etc, rather than having 6 components that do the same thing) => https://www.chartkick.com/react DONE
 // Order quotes in array
-//components: graph, buttons, page title
+//components: graph, buttons, page title DONE
 // write readme
 // write tests
 // nice to have: a spinner while it loads

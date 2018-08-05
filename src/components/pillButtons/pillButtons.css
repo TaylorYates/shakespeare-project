@@ -2,21 +2,22 @@
   width: auto;
   display: inline-block;
   margin: 2em 6em; }
-  .pillButtons a {
+  .pillButtons button {
     padding: 20px;
     border: 1px solid #BFBFBF;
     color: #8C8C8C;
     text-decoration: none;
     border-right: 0;
     background-color: #F2F2F2;
-    font-size: 0.9em; }
-    .pillButtons a:last-of-type {
+    font-size: 0.9em;
+    outline: none; }
+    .pillButtons button:last-of-type {
       border-right: 1px solid #BFBFBF;
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px; }
-    .pillButtons a:first-of-type {
+    .pillButtons button:first-of-type {
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px; }
-    .pillButtons a:active, .pillButtons a:hover, .pillButtons a:focus {
+    .pillButtons button:active, .pillButtons button:hover, .pillButtons button:focus {
       background-color: #d9d9d9;
       color: #737373; }

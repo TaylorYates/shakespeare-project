@@ -5,14 +5,28 @@ import PillButtons from './components/pillButtons'
 import Header from './components/header'
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: "dataAll"
+    }
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(dataType) {
+    this.setState({ data: dataType })
+  }
+
+
   render() {
     return (
       <div className="App">
         <div className="topContainer">
           <Header/>
-          <PillButtons/>
+          <PillButtons handleClick={this.handleClick} />
         </div>
-        <Quotes />
+        <Quotes dataType={this.state.data} />
       </div>
     );
   }

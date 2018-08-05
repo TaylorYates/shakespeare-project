@@ -11,10 +11,10 @@
 
 .x-title {
   position: absolute;
-  top: 0;
+  top: -5%;
   left: 10%; }
 
 .y-title {
   position: absolute;
-  bottom: 0;
-  right: 10%; }
+  bottom: -2%;
+  right: 20%; }

@@ -10,25 +10,17 @@ class PillButtons extends React.Component {
     }
   }
 
-  componentDidMount() {
-
-  }
-
-
-  componentWillUnmount() {
-    //
-  }
 
 
   render() {
     return (
       <div className="pillButtons">
-        <a href="#">All</a>
-        <a href="#">Act 1</a>
-        <a href="#">Act 2</a>
-        <a href="#">Act 3</a>
-        <a href="#">Act 4</a>
-        <a href="#">Act 5</a>
+        <button onClick={() => this.props.handleClick("dataAll")}>All</button>
+        <button onClick={() => this.props.handleClick("dataOne")}>Act 1</button>
+        <button onClick={() => this.props.handleClick("dataTwo")}>Act 2</button>
+        <button onClick={() => this.props.handleClick("dataThree")}>Act 3</button>
+        <button onClick={() => this.props.handleClick("dataFour")}>Act 4</button>
+        <button onClick={() => this.props.handleClick("dataFive")}>Act 5</button>
       </div>
     )
   }

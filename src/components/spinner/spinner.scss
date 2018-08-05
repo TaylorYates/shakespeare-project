@@ -1,0 +1,18 @@
+@import "../../variables.scss";
+
+
+@keyframes loading {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.spinner {
+  height: 3em;
+  width: 3em;
+  background-color: $border;
+  animation: loading 1s infinite;
+}
+
+.spinnerText {
+  margin-top: 0.5em;
+}

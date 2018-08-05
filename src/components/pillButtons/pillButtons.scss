@@ -5,7 +5,7 @@
   display: inline-block;
   margin: 2em 6em;
 
-  a {
+  button {
     padding: 20px;
     border: 1px solid $border;
     color: $linkColor;
@@ -13,6 +13,7 @@
     border-right: 0;
     background-color: $linkBackground;
     font-size: 0.9em;
+    outline: none;
 
     &:last-of-type {
       border-right: 1px solid $border;
