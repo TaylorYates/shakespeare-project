@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PillButtons/> has 6 tabs 1`] = `
+<div
+  className="pillButtons"
+>
+  <button
+    onClick={[Function]}
+  >
+    All
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Act 1
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Act 2
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Act 3
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Act 4
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Act 5
+  </button>
+</div>
+`;

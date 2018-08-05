@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './pillButtons.css';
 
 class PillButtons extends React.Component {
@@ -9,8 +8,6 @@ class PillButtons extends React.Component {
 
     }
   }
-
-
 
   render() {
     return (

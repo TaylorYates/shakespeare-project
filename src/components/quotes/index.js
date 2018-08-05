@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './quotes.css';
 import quotes from './henry_iv.json';
 import ReactChartkick, { LineChart } from 'react-chartkick'
@@ -42,14 +41,15 @@ class Quotes extends React.Component {
       })
 
       .then(function(myJson) {
+
         // if it's corrolating json has an emotion property
         if (myJson.emotion) {
           const emotion = myJson.emotion.emotion.document.emotion;
           //break up the line number
-          let [act, verse, line] = lineNo.split(".");
+          let [act] = lineNo.split(".");
 
           // turn the first part ie. act into a number from a string
-          act = parseInt(act);
+          act = parseInt(act, 10);
 
           // redefining emotion for this purpose
           quote.emotion = emotion;
@@ -170,7 +170,8 @@ class Quotes extends React.Component {
         dataThree,
         dataFour,
         dataFive,
-        loaded: true})
+        loaded: true
+      })
     })
   }
 
@@ -197,18 +198,3 @@ class Quotes extends React.Component {
 }
 
 export default Quotes;
-
-
-
-
-
-///////////////
-//   TODO    //
-///////////////
-// create an array of objects for all, act 1, act 2, etc DONE
-// utilise this array of objects to impliment line graphs (a component that will change the nested object being fed into it corrosponding with a data attribute on the button. Ie. if all is clicked, it renders the first object, etc, rather than having 6 components that do the same thing) => https://www.chartkick.com/react DONE
-// Order quotes in array
-//components: graph, buttons, page title DONE
-// write readme
-// write tests
-// nice to have: a spinner while it loads
