@@ -1,20 +1,21 @@
+@import "../../variables.scss";
+
 .pillButtons {
   width: auto;
   display: inline-block;
-  padding: 20px 0;
-  margin: 20px 0;
+  margin: 2em 6em;
 
   a {
     padding: 20px;
-    border: 1px solid #bfbfbf;
-    color: #8c8c8c;
+    border: 1px solid $border;
+    color: $linkColor;
     text-decoration: none;
     border-right: 0;
-    background-color: #F2F2F2;
+    background-color: $linkBackground;
     font-size: 0.9em;
 
     &:last-of-type {
-      border-right: 1px solid #bfbfbf;
+      border-right: 1px solid $border;
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px;
     }
@@ -27,8 +28,8 @@
     &:active,
     &:hover,
     &:focus {
-      background-color: darken(#F2F2F2, 10%);
-      color: darken(#8c8c8c, 10%);
+      background-color: darken($linkBackground, 10%);
+      color: darken($linkColor, 10%);
     }
   }
 }

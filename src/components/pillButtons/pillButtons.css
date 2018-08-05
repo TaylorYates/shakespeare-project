@@ -1,18 +1,17 @@
 .pillButtons {
   width: auto;
   display: inline-block;
-  padding: 20px 0;
-  margin: 20px 0; }
+  margin: 2em 6em; }
   .pillButtons a {
     padding: 20px;
-    border: 1px solid #bfbfbf;
-    color: #8c8c8c;
+    border: 1px solid #BFBFBF;
+    color: #8C8C8C;
     text-decoration: none;
     border-right: 0;
     background-color: #F2F2F2;
     font-size: 0.9em; }
     .pillButtons a:last-of-type {
-      border-right: 1px solid #bfbfbf;
+      border-right: 1px solid #BFBFBF;
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px; }
     .pillButtons a:first-of-type {

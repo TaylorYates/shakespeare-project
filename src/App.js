@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Quotes from './components/quotes'
 import PillButtons from './components/pillButtons'
-
+import Header from './components/header'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className="App-title">Shakespeare project</h1>
+        <div className="topContainer">
+          <Header/>
+          <PillButtons/>
+        </div>
         <Quotes />
-        <PillButtons/>
       </div>
     );
   }
