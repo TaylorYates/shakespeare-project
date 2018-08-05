@@ -174,21 +174,23 @@ class Quotes extends React.Component {
     })
   }
 
-
-  componentWillUnmount() {
-    // nothing to unmount
-  }
-
   render() {
     return (
-      <div className="linechart-container">
-        {this.state.loaded ?
-          <React.Fragment>
-            <div className="x-title">Emotion percentage</div>
-            <div class="y-title">Act, scene, line</div>
-            <LineChart data={this.state[this.props.dataType]} colors={["#2E64C8", "#009727", "#FF992B", "#9D0096", "#E23822"]} suffix="%" width="80%" height="600px" legend="right" />
-          </React.Fragment>
-          : <Spinner/>}
+      <div className="quotes">
+        <div className="linechart-container">
+          {this.state.loaded ?
+            <React.Fragment>
+              <div className="x-title">Emotion percentage</div>
+              <div class="y-title">Act, scene, line</div>
+              <LineChart data={this.state[this.props.dataType]} colors={["#2E64C8", "#009727", "#FF992B", "#9D0096", "#E23822"]} suffix="%" width="80%" height="600px" legend="right" />
+            </React.Fragment>
+            : <Spinner/>}
+        </div>
+        <div className="disclaimer">
+          {this.state.loaded ?
+              <p>*Please note, the acts/scenes/lines are not rendered in order due to time constraints.</p>
+            : ""}
+        </div>
       </div>
     )
   }

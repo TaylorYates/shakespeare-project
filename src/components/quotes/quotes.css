@@ -18,3 +18,9 @@
   position: absolute;
   bottom: -2%;
   right: 20%; }
+
+.disclaimer {
+  margin-top: 2em;
+  text-align: center;
+  font-size: 0.75em;
+  font-style: italic; }
